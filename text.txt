@@ -17,7 +17,6 @@ Feel free to reach out if you have any questions or need further information.
 We're looking forward to having you join us for an informative and engaging Flutter Workshop!
 
 Best regards,
-
 Washma Tabassum
 Event organizer
 Flutterflow

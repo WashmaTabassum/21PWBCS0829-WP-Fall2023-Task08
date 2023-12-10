@@ -1,7 +1,8 @@
 const express = require('express');
-const fs= require('fs');
-const path= require('path');
+const fs = require('fs').promises; 
+const path = require('path');
 const app = express();
+app.use(express.json());
 const port = 3000;
 
 //Route for handling GET requests at the root URL "/"
@@ -22,18 +23,23 @@ app.get('/readFile',(req,res)=>{
     });
 });
 
-//Route for handling POST requests at "/writeFile"
-app.post('/writeFile',(req,res)=>{
-    fs.writeFile('./text.txt', 'utf8',(err)=>{
-        if(err){
-           console.error('Error writing to File: ',err);
-        }
-        else
-        {
-
-        }
-    });
-});
+app.post('/writeFile/:filename', async (req, res) => {
+    const { filename } = req.params;
+    var data = req.body;
+  
+    if (!data) {
+      return res.status(400).json({ error: 'No data provided' });
+    }
+  
+    const filePath = path.join(__dirname, filename);
+  
+    try {
+      await fs.writeFile(filePath, JSON.stringify(data));
+      res.status(200).json({ message: 'Data written to file successfully' });
+    } catch (err) {
+      res.status(500).json({ error: 'Error writing to file' });
+    }
+  });
 
 //Route for handling PUT requests at "/updateFile"
 app.put('/updateFile',(req,res)=>{

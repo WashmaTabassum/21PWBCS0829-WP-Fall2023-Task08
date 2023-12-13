@@ -8,7 +8,7 @@ const PORT = 3000;
 app.use(express.json());
 
 app.get('/', (req, res) =>{
-  res.send("******** HELLO WELCOME TO THE DASHBOARD ******* <br><br> 1. To check password strength go to route password/check-password <br><br> 2. To visit Ecommerce details: <br> i) For displaying products go to route&nbsp; /ecommerce/products <br> ii) For adding a product to the cart go to route&nbsp; /ecommerce/cart/add/:productId <br> iii) To view product details by ID go to route&nbsp; /ecommerce/products/:id <br> iv) For user authentication go to route&nbsp; /ecommerce/login<br><br> 3)To read contents of the file go to route /readFile/filename <br>4) To write contents of the file go to route /writeFile/filename <br>5) To update content of the file go to route /updateFile/filename");
+  res.send("******** HELLO WELCOME TO THE DASHBOARD ******* <br><br> 1. To check password strength go to route password/check-password <br><br> 2. To visit Ecommerce details: <br> i) For displaying products go to route&nbsp; /ecommerce/products <br> ii) For adding a product to the cart go to route&nbsp; /ecommerce/cart/add/:productId <br> iii) To view product details by ID go to route&nbsp; /ecommerce/products/:id <br> iv) For user authentication go to route&nbsp; /ecommerce/login<br>");
 });
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

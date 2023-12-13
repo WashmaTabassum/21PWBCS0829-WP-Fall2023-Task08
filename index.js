@@ -5,7 +5,11 @@ const ecommerceRoutes = require('./ecommerceRoutes');
 const passwordStrengthRoutes = require('./passwordStrengthRoutes');
 
 const PORT = 3000;
+app.use(express.json());
 
+app.get('/', (req, res) =>{
+  res.send("To Check your password stength go to (/check-password) route!");
+});
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/ecommerce', ecommerceRoutes); // Mounting ecommerceRoutes

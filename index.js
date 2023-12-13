@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const passwordValidator = require('password-validator');
+
 const ecommerceRoutes = require('./ecommerceRoutes');
 const passwordStrengthRoutes = require('./passwordStrengthRoutes');
 

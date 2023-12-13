@@ -16,7 +16,6 @@ schema
 // Endpoint to check password strength
 router.post('/check-password', (req, res) => {
   const { password } = req.body;
-  // Validate password against the schema
   const isValid = schema.validate(password);
   if (isValid) {
     res.status(200).json({ message: 'Password is strong!' });
